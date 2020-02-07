@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 
@@ -9,17 +10,15 @@ dotenv.config({ path: './config/config.env' });
 // Connect to Database
 connectDB();
 
-// Route files
+// Route filesß
 const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
 const auth = require('./routes/auth');
 
 const app = express();
 
-// Body Parser
 app.use(express.json());
-
-// Mount routers
+app.use(cookieParser());
 
 app.use('/api/v1/bootcamps', bootcamps);
 app.use('/api/v1/courses', courses);
