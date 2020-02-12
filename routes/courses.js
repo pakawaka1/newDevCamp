@@ -3,6 +3,7 @@ const {
   getCourses,
   getCourse,
   addCourse,
+  createCourse,
   updateCourse,
   deleteCourse
 } = require('../controllers/courses');
@@ -13,8 +14,10 @@ const router = express.Router({ mergeParams: true });
 
 const { protect } = require('../middleware/auth');
 
-router.route('/').get(protect, getCourses);
-// .post(createCourse);
+router
+  .route('/')
+  .get(protect, getCourses)
+  .post(protect, createCourse);
 
 router
   .route('/:id')

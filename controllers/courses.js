@@ -3,14 +3,9 @@ const asyncHandler = require('../middleware/async');
 const Course = require('../models/Course');
 const Bootcamp = require('../models/Bootcamp');
 
-// @desc      Get courses
-// @route     GET /api/v1/courses
-// @route     GET /api/v1/bootcamps/:bootcampId/courses
-// @access    Public
 exports.getCourses = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
     const courses = await Course.find({ bootcamp: req.params.bootcampId });
-
     return res.status(200).json({
       success: true,
       count: courses.length,
@@ -76,6 +71,11 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
     success: true,
     data: course
   });
+});
+
+exports.createCourse = asyncHandler(async (req, res, next) => {
+  const course = await Course.create(req.body);
+  res.status(201).json({ success: true, data: course });
 });
 
 // @desc      Update course
