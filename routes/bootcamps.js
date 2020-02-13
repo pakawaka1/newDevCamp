@@ -7,7 +7,13 @@ const {
   deleteBootcamp
 } = require('../controllers/bootcamps');
 
+// include other resource routers
+const courseRouter = require('./courses');
+
 const router = express.Router();
+
+// reroute into other resource routers
+router.use('/:bootcampId/courses', courseRouter);
 
 const { protect } = require('../middleware/auth');
 

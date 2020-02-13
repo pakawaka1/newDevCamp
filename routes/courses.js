@@ -3,7 +3,6 @@ const {
   getCourses,
   getCourse,
   addCourse,
-  createCourse,
   updateCourse,
   deleteCourse
 } = require('../controllers/courses');
@@ -17,7 +16,7 @@ const { protect } = require('../middleware/auth');
 router
   .route('/')
   .get(protect, getCourses)
-  .post(protect, createCourse);
+  .post(protect, addCourse);
 
 router
   .route('/:id')
