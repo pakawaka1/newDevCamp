@@ -1,13 +1,13 @@
 const express = require('express');
 const dotenv = require('dotenv');
-
+const fileupload = require('express-fileupload');
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
 const helmet = require('helmet');
 const xssClean = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
-
+const path = require('path');
 const cors = require('cors');
 const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
@@ -18,7 +18,7 @@ dotenv.config({ path: './config/config.env' });
 // Connect to Database
 connectDB();
 
-// Route filesß
+// Route files
 const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
 const auth = require('./routes/auth');
@@ -26,6 +26,12 @@ const auth = require('./routes/auth');
 const app = express();
 
 app.use(express.json());
+
+//file upload
+app.use(fileupload());
+
+// set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 //authentication middleware
 app.use(cookieParser());
