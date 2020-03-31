@@ -16,7 +16,9 @@ exports.register = asyncHandler(async (req, res, next) => {
 exports.login = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    return next(new ErrorResponse('Please provide an email and password', 400));
+    return next(
+      new ErrorResponse('Please provide an email and password.', 400)
+    );
   }
   const user = await User.findOne({ email }).select('+password');
   if (!user) {
@@ -54,3 +56,18 @@ const sendTokenResponse = (user, statusCode, res) => {
     .cookie('token', token, options)
     .json({ success: true, token });
 };
+
+exports.forgotPassword = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorResponse('There is no user with that email.', 404));
+  }
+
+  const resetToken = user.getResetPasswordToken();
+  await user.save({ validateBeforeSave: false });
+  res.status(200).json({
+    success: true,
+    data: user
+  });
+});
