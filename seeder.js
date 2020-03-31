@@ -30,6 +30,8 @@ const courses = JSON.parse(
 const users = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8')
 );
+
+
 // Import into DB
 const importData = async () => {
   try {
