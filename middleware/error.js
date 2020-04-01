@@ -7,7 +7,7 @@ const errorHandler = (err, req, res, next) => {
 
   // Bad ObjectId Error
   if (err.name === 'CastError') {
-    const message = `Resource not found`;
+    const message = `Resource not found with ID of ${err.value}`;
     error = new ErrorResponse(message, 404);
   }
 
