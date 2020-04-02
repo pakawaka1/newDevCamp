@@ -11,7 +11,9 @@ Rename "config/config.env.env" to "config/config.env" and update the values/sett
 ```
 npm install
 ```
+
 ## Run App
+
 ```
 # Run in dev mode
 npm rum dev
@@ -19,7 +21,6 @@ npm rum dev
 # Run in prod mode
 npm start
 ```
+
 - Version: 1.0.0
 - License : MIT
-
-
