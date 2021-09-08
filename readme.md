@@ -1,4 +1,4 @@
-# DevCamper API
+# newDevCamp API
 
 > Backend API for DevCamper application, which is a bootcamp directory website.
 
@@ -21,6 +21,3 @@ npm run dev
 # Run in prod mode
 npm start
 ```
-
-- Version: 1.0.0
-- License : MIT
