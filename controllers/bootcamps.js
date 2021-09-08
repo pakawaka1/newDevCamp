@@ -9,6 +9,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
 
 exports.getBootcamp = asyncHandler(async (req, res, next) => {
   const bootcamp = await Bootcamp.findById(req.params.id);
+  console.log(bootcamp);
   if (!bootcamp) {
     return next(
       new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
@@ -51,7 +52,7 @@ exports.updateBootcamp = asyncHandler(async (req, res, next) => {
   }
   bootcamp = await Bootcamp.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
   res
     .status(200)
@@ -118,7 +119,7 @@ exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
 
   // create custom filename
   file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`;
-  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async (err) => {
     if (err) {
       return next(new ErrorResponse(`Problem with file upload.`, 500));
     }
