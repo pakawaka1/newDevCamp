@@ -2,15 +2,54 @@
 
 Backend API for DevCamper application, which is a bootcamp directory website.
 
-## Usage
-
-Rename "config/config.env.env" to "config/config.env" and update the values/settings to your own## How to Get Started
+## How to Get Started
 
 1.  Requirements (with links to download)
 
     - Node.js: https://nodejs.org/en/
     - MondoDB: https://www.mongodb.com/try/download/community
     - Your favorite code editor. I use Visual Studio Code: https://code.visualstudio.com/download
+
+3.  App Setup (in Terminal)
+
+    - Now in your chosen directory, run this command:
+
+      `git clone git@github.com:pakawaka1/YearOneMovieList.git`
+
+    - Next, run the following two commands:
+
+      `cd YearOneMovieList`
+
+      `npm install`
+
+## Usage
+
+Rename "config/config.env.env" to "config/config.env" and update the values/settings to your own## How to Get Started
+
+
+
+## Run App
+
+```
+# Run in dev mode
+npm run dev
+
+# Run in prod mode
+npm start
+```
+
+# YearOneMovieList
+
+A full stack application which allows users to search, find information and add reviews for movies.
+
+## How to Get Started
+
+1.  Requirements (with links to download)
+
+    - Node.js: https://nodejs.org/en/
+    - PostgreSQL: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+    - Your favorite code editor. I use Visual Studio Code: https://code.visualstudio.com/download
+    - You will need an API key to connect to the movie database API I used: https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative
 
 2.  Database Setup
 
@@ -100,12 +139,3 @@ Rename "config/config.env.env" to "config/config.env" and update the values/sett
 
       <img width="422" alt="Screen Shot 2021-08-18 at 11 24 22 PM" src="https://user-images.githubusercontent.com/29390297/130025639-73cfffff-0075-493c-ad90-ec5b51cc7525.png">
 
-## Run App
-
-```
-# Run in dev mode
-npm run dev
-
-# Run in prod mode
-npm start
-```
