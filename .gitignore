@@ -3,3 +3,7 @@ node_modules
 config/config.env
 
 dc.postman_collection.json
+
+package-lock.json
+
+.DS_Store

@@ -47,7 +47,7 @@ app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
-  max: 100
+  max: 100,
 });
 
 app.use(limiter);
@@ -69,7 +69,6 @@ const server = app.listen(
 
 // unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
-  console.log(err);
   console.log(`Error: ${err.message}`);
   // Close server and exits process
   server.close(() => process.exit(1));
