@@ -5,8 +5,6 @@ config/config.env
 dc.postman_collection.json
 
 package-lock.json
-<<<<<<< HEAD
-=======
 
 .DS_Store
->>>>>>> fe78ee08e8a6c3eb5d39057d09bbb1c81b04523d
+ 
