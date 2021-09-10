@@ -14,6 +14,7 @@ www.developercamp.us
 
     - Node.js: https://nodejs.org/en/
     - MondoDB: https://www.mongodb.com/try/download/community
+    - Postman: https://www.postman.com/downloads/
     - Your favorite code editor. I use Visual Studio Code: https://code.visualstudio.com/download
 
 2.  App Setup (in Terminal)
