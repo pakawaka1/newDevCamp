@@ -6,7 +6,7 @@ Backend API for DevCamper application, which is a bootcamp directory website.
 
 www.developercamp.us
 
-<img width="800" alt="Screen Shot 2021-09-08 at 12 24 14 AM" src="https://user-images.githubusercontent.com/29390297/132464867-fddcab15-d590-4d03-a8bd-630162ae3648.png">
+![Screen Shot 2021-09-09 at 9 01 03 PM](https://user-images.githubusercontent.com/29390297/132798123-637d46d6-a36b-478e-afc8-0c225b13c01b.png)
 
 ## How to Get Started (using repository)
 
